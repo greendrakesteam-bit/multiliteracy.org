@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Peer-reviewed research on biliteracy policy, language teaching, and multilingual education. Explore Dr. Kristin Davin's published articles organized by research theme.">
+    <meta name="keywords" content="biliteracy research, language policy, multilingual education, Seal of Biliteracy, peer-reviewed articles, Dr. Kristin Davin, language assessment, teacher development">
+    <meta name="author" content="Dr. Kristin J. Davin">
+    <meta property="og:title" content="Evidence-Based Research & Insights | Seal of Biliteracy">
+    <meta property="og:description" content="Peer-reviewed research on biliteracy policy, language teaching, and multilingual education organized by theme.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multiliteracy.org/research.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Evidence-Based Research & Insights | Seal of Biliteracy">
+    <meta name="twitter:description" content="Peer-reviewed research on biliteracy policy, language teaching, and multilingual education.">
+    <link rel="canonical" href="https://multiliteracy.org/research.html">
+
+    <title>Evidence-Based Research & Insights | Seal of Biliteracy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Research page enhancements beyond global style.css */
+        .theme-section { margin-bottom: 3rem; scroll-margin-top: 100px; }
+        .theme-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #1a2744;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #c49a3c;
+            padding-bottom: 0.5rem;
+        }
+        .theme-intro {
+            background-color: #f8f7f3;
+            padding: 1.25rem;
+            border-left: 4px solid #c49a3c;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        .articles-grid { display: grid; gap: 1.25rem; }
+
+        /* Article card overrides for richer styling */
+        .article-header { background-color: #fafafa; user-select: none; padding: 1.25rem; }
+        .article-header:hover { background-color: #f0f0f0; }
+        .article-year {
+            background-color: #c49a3c;
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 1rem;
+            min-width: 50px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            color: #1a2744;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        .expand-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border: 2px solid #c49a3c;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .expand-toggle:hover { background-color: #c49a3c; }
+        .expand-toggle svg { width: 16px; height: 16px; color: #c49a3c; transition: all 0.3s; }
+        .article-card.expanded .expand-toggle { background-color: #c49a3c; }
+        .article-card.expanded .expand-toggle svg { color: white; }
+
+        /* Expanded content styling */
+        .article-body { padding: 0 1.25rem 1.25rem; }
+        .article-citation {
+            background-color: #f8f7f3;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: #333;
+            border-left: 3px solid #c49a3c;
+        }
+        .article-citation strong { font-style: normal; color: #1a2744; }
+        .doi-link {
+            display: inline-block;
+            margin-top: 0.6rem;
+            background-color: #1a2744;
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-style: normal;
+            transition: background-color 0.3s ease;
+        }
+        .doi-link:hover { background-color: #c49a3c; }
+        .article-summary {
+            background-color: #fffef5;
+            padding: 1rem;
+            border-radius: 4px;
+            border-left: 3px solid #c49a3c;
+        }
+        .article-summary strong { display: block; color: #1a2744; margin-bottom: 0.4rem; font-size: 0.92rem; }
+        .article-summary p { margin: 0; color: #333; line-height: 1.6; font-size: 0.92rem; }
+
+        @media (max-width: 768px) {
+            .theme-title { font-size: 1.3rem; }
+            .article-header { flex-direction: column; align-items: flex-start; }
+            .article-year { margin-right: 0; margin-bottom: 0.6rem; }
+            .expand-toggle { align-self: flex-end; margin-top: -2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <span class="logo-mark">S|B</span>
+                    <span class="logo-text">SEAL OF BILITERACY</span>
+                </a>
+            </div>
+            <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">The Books</a></li>
+                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="state-resources.html">State Resources</a></li>
+                <li><a href="about.html">About Dr. Davin</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Research Header -->
+    <div class="research-header">
+        <div class="container">
+            <h1>Evidence-Based Research & Insights</h1>
+            <p>Peer-reviewed research on biliteracy policy, language teaching, and multilingual education organized by theme. Click any title to read a summary.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container" style="padding: 3rem 2rem;">
+        <!-- THEME 1: Policy Implementation & State Variation -->
+        <section class="theme-section" id="policy-implementation">
+            <h2 class="theme-title">Policy Implementation & State Variation</h2>
+            <div class="theme-intro">
+                This research explores how states implement the Seal of Biliteracy, documenting significant variations in policies, assessment criteria, and outcomes. These studies identify key factors that support or hinder successful program rollout across different contexts.
+            </div>
+
+            <div class="articles-grid">
+                <!-- Article 1.1 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2017</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">The Seal of Biliteracy: Variations in policy and outcomes</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Davin, K. J., & Heineke, A. J.</strong> (2017). The Seal of Biliteracy: Variations in policy and outcomes. <em>Foreign Language Annals</em>, 50(3), 486-499.
+                                <br><a href="https://doi.org/10.1111/flan.12279" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>This comparative study examines Seal of Biliteracy policies across multiple states, documenting significant variations in requirements, assessment criteria, and award outcomes. The research reveals how different implementation approaches affect student participation and program success.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 1.2 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2018</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">The Seal of Biliteracy: Successes and challenges of implementation</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Davin, K. J., Heineke, A. J., & Egnatz, L.</strong> (2018). The Seal of Biliteracy: Successes and challenges of implementation. <em>Foreign Language Annals</em>, 51(2), 275-289.
+                                <br><a href="https://doi.org/10.1111/flan.12336" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>This study presents findings on successes and challenges that schools face when implementing the Seal of Biliteracy. The research identifies key factors that support or hinder effective program rollout, providing actionable insights for educators and administrators.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 1.3 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2020</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">Implementing the Seal of Biliteracy: A multiple case study of six high-awarding districts</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Heineke, A. J., & Davin, K. J.</strong> (2020). Implementing the Seal of Biliteracy: A multiple case study of six high-awarding districts. <em>Modern Language Journal</em>, 104(2), 395-411.
+                                <br><a href="https://doi.org/10.1111/modl.12708" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>This in-depth case study examines six school districts with high award rates to identify common practices and conditions that support successful biliteracy program implementation. The findings provide a roadmap for other districts seeking to expand participation and achievement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEME 2: Equity, Access & Student Voice -->
+        <section class="theme-section" id="equity-access">
+            <h2 class="theme-title">Equity, Access & Student Voice</h2>
+            <div class="theme-intro">
+                These studies center student perspectives on biliteracy and explore barriers to access. Using critical frameworks, the research examines how testing policies and systemic factors shape student participation and outcomes in biliteracy programs.
+            </div>
+
+            <div class="articles-grid">
+                <!-- Article 2.1 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2018</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">The Seal of Biliteracy: Adding students' voices to the conversation</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Davin, K. J., & Heineke, A. J.</strong> (2018). The Seal of Biliteracy: Adding students' voices to the conversation. <em>Bilingual Research Journal</em>, 41(3), 312-328.
+                                <br><a href="https://doi.org/10.1080/15235882.2018.1481896" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>This study centers student perspectives on the Seal of Biliteracy, examining what motivates students to pursue the credential and what biliteracy recognition means to their identity and future aspirations. The research prioritizes student voice in biliteracy conversations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 2.2 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2019</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">Critical language testing: Factors influencing students' decisions to (not) pursue the Seal of Biliteracy</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Davin, K. J.</strong> (2019). Critical language testing: Factors influencing students' decisions to (not) pursue the Seal of Biliteracy. <em>Harvard Educational Review</em>, 91(2), 179-203.
+                                <br><a href="https://doi.org/10.17763/1943-5045-91.2.179" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>This critical analysis investigates factors that influence whether students decide to pursue or forgo the Seal of Biliteracy. Using critical language testing frameworks, the research reveals how testing policies and systemic barriers shape participation decisions and equity outcomes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEME 3: Language Teacher Development -->
+        <section class="theme-section" id="teacher-development">
+            <h2 class="theme-title">Language Teacher Development</h2>
+            <div class="theme-intro">
+                This research examines teacher preparation, recruitment, retention, and professional trajectories. The studies explore how teachers' personal and professional histories shape classroom practices and how teacher development programs support multilingual education and Indigenous language preservation.
+            </div>
+
+            <div class="articles-grid">
+                <!-- Article 3.1 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2019</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">Recruitment and retention: Analyzing foreign language teachers' motivation, influences and perceptions</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Kissau, S., Davin, K. J., & Wang, C.</strong> (2019). Recruitment and retention: Analyzing foreign language teachers' motivation, influences and perceptions. <em>Teaching and Teacher Education</em>, 76, 174-183.
+                                <br><a href="https://doi.org/10.1016/j.tate.2018.11.020" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>This study analyzes what motivates foreign language teachers and what influences their career decisions. The research provides insights into recruitment and retention patterns that have implications for building and sustaining multilingual education programs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 3.2 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2018</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">The genesis of classroom discursive practices as history in person processes</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Donato, R., & Davin, K. J.</strong> (2018). The genesis of classroom discursive practices as history in person processes. <em>Language Teaching Research</em>, 23(6), 739-760.
+                                <br><a href="https://doi.org/10.1177/1362168817925473" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>This theoretical and empirical study traces how classroom discursive practices emerge from teachers' personal and professional histories. The research demonstrates how history-in-person processes shape the development of language teaching approaches.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 3.3 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2024</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">Stories of struggle and resilience: Examining the experiences of two Spanish teachers through history in person</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Davin, K. J., & Donato, R.</strong> (2024). Stories of struggle and resilience: Examining the experiences of two Spanish teachers through history in person. <em>Modern Language Journal</em>, 108(3), 670-687.
+                                <br><a href="https://doi.org/10.1111/modl.12947" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>Using a history-in-person framework, this study traces the professional trajectories of two Spanish teachers, revealing how personal struggles and professional resilience shape classroom practices and teacher identity development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 3.4 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2023</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">Preparing Cherokee teachers in a world language education program</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Kissau, S., Davin, K., & Moore, K.</strong> (2023). Preparing Cherokee teachers in a world language education program. <em>Journal of Teacher Education</em>.
+                                <br><a href="https://doi.org/10.1177/00224871231165478" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>This study explores a unique teacher preparation program for Cherokee language teachers, examining both the challenges and opportunities involved in supporting Indigenous language preservation through teacher education.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEME 4: Language Assessment & Development -->
+        <section class="theme-section" id="assessment-development">
+            <h2 class="theme-title">Language Assessment & Development</h2>
+            <div class="theme-intro">
+                This research examines approaches to language assessment, grammar instruction, and developmental perspectives. The studies apply sociocultural and activity theory frameworks to understand how assessment practices and instructional approaches support second language development.
+            </div>
+
+            <div class="articles-grid">
+                <!-- Article 4.1 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2022</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">A sociocultural perspective: Seeking evidence of development in a PACE approach to grammar instruction</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Davin, K. J., & Kushki, A.</strong> (2022). A sociocultural perspective: Seeking evidence of development in a PACE approach to grammar instruction. <em>Language Learning</em>, 72(S1), 165-200.
+                                <br><a href="https://doi.org/10.1111/lang.12473" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>This study applies sociocultural theory to examine how PACE (Presentation, Attention, Codification, Extension) grammar instruction supports second language development through mediated interaction and scaffolding.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 4.2 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2021</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">Contradictions in teachers' classroom dynamic assessment implementation: An activity system analysis</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Sagan, A., Heinion, J. B., & Davin, K. J.</strong> (2021). Contradictions in teachers' classroom dynamic assessment implementation: An activity system analysis. <em>TESOL Quarterly</em>.
+                                <br><a href="https://doi.org/10.1002/tesq.3046" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>Using activity theory, this study analyzes the tensions and contradictions that emerge when teachers implement dynamic assessment in classrooms. The research identifies conflicts between institutional demands and assessment-for-learning principles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEME 5: AI & Innovation in Language Education -->
+        <section class="theme-section" id="ai-innovation">
+            <h2 class="theme-title">AI & Innovation in Language Education</h2>
+            <div class="theme-intro">
+                This cutting-edge research explores emerging technologies and innovations in language teaching. These studies examine how new tools like ChatGPT are reshaping instructional practices and the importance of critical evaluation of AI-generated content for language education.
+            </div>
+
+            <div class="articles-grid">
+                <!-- Article 5.1 -->
+                <div class="article-card">
+                    <div class="article-header" role="button" tabindex="0" aria-expanded="false">
+                        <span class="article-year">2025</span>
+                        <div class="article-title-section">
+                            <h3 class="article-title">ChatGPT in foreign language lesson plan creation: Trends, variability, and historical biases</h3>
+                        </div>
+                        <div class="expand-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 15 12 21 6 15"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-body">
+                            <div class="article-citation">
+                                <strong>Dyrnburg, A. & Davin, K. J.</strong> (2025). ChatGPT in foreign language lesson plan creation: Trends, variability, and historical biases. <em>ReCALL</em>, 37(3), 332-347.
+                                <br><a href="https://doi.org/10.1017/S0958344024000272" class="doi-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                            <div class="article-summary">
+                                <strong>Summary:</strong>
+                                <p>This recent study examines how ChatGPT generates foreign language lesson plans, identifying patterns, variability, and embedded historical biases in AI-generated instructional content. The research has important implications for responsible use of AI in language education.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2026 multiliteracy.org. A resource by Dr. Kristin J. Davin.<br><small style="opacity:0.6;">As an Amazon Associate, I earn from qualifying purchases.</small></p>
+                </div>
+                <div class="footer-right">
+                    <nav class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="books.html">The Books</a>
+                        <a href="research.html">Research</a>
+                        <a href="state-resources.html">State Resources</a>
+                        <a href="about.html">About Dr. Davin</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Article Card Expand/Collapse Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const articleHeaders = document.querySelectorAll('.article-header');
+
+            articleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const card = header.closest('.article-card');
+                    const isExpanded = card.classList.contains('expanded');
+
+                    // Close other open cards
+                    document.querySelectorAll('.article-card.expanded').forEach(openCard => {
+                        if (openCard !== card) {
+                            openCard.classList.remove('expanded');
+                            openCard.querySelector('.article-header').setAttribute('aria-expanded', 'false');
+                        }
+                    });
+
+                    // Toggle current card
+                    card.classList.toggle('expanded');
+                    header.setAttribute('aria-expanded', !isExpanded);
+                });
+
+                // Allow keyboard access
+                header.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        header.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
