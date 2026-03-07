@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Seal of Biliteracy: Case Studies and Considerations for Policy Implementation. Edited by Amy J. Heineke & Kristin J. Davin. Published by Information Age Publishing.">
+  <meta name="keywords" content="Seal of Biliteracy, case studies, policy implementation, districts, states, bilingual policy">
+  <meta name="author" content="Amy J. Heineke & Kristin J. Davin">
+  <title>The Seal of Biliteracy: Case Studies - The Books</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <span class="logo-symbol">S|B</span>
+        <span class="logo-text">SEAL OF BILITERACY</span>
+      </a>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="books.html" class="active">The Books</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="state-resources.html">State Resources</a></li>
+          <li><a href="about.html">About Dr. Davin</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Back Link -->
+    <a href="books.html" class="back-link">← Back to All Books</a>
+
+    <!-- Book Detail Section -->
+    <div class="book-detail-wrapper">
+      <!-- Book Cover Placeholder -->
+      <div class="book-cover-placeholder">
+        <img src="images/case_studies_and_considerations.jpg" alt="The Seal of Biliteracy: Case Studies and Considerations book cover" class="book-cover-img">
+      </div>
+
+      <!-- Book Details -->
+      <div class="book-details">
+        <h1 class="book-detail-title">The Seal of Biliteracy: Case Studies and Considerations for Policy Implementation</h1>
+
+        <!-- Metadata Section -->
+        <div class="book-detail-meta">
+          <div class="book-detail-item">
+            <div class="book-detail-label">Editors</div>
+            <div class="book-detail-value">Amy J. Heineke & Kristin J. Davin</div>
+          </div>
+          <div class="book-detail-item">
+            <div class="book-detail-label">Publisher</div>
+            <div class="book-detail-value">Information Age Publishing</div>
+          </div>
+          <div class="book-detail-item">
+            <div class="book-detail-label">Published</div>
+            <div class="book-detail-value">2020</div>
+          </div>
+
+          <!-- Ideal For Tags -->
+          <div class="book-detail-item">
+            <div class="book-detail-label">Ideal For</div>
+            <div class="ideal-for">
+              <span class="ideal-for-tag">Policy Researchers</span>
+              <span class="ideal-for-tag">District Leaders</span>
+              <span class="ideal-for-tag">State Education Officials</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Description -->
+        <p class="book-description-full">
+          This edited volume examines the Seal of Biliteracy through case studies of policy implementation in diverse contexts across the United States. It presents real-world examples from districts and states navigating this policy initiative, highlighting successes, challenges, and lessons learned. The book provides valuable insights for policymakers and administrators considering or refining their own Seal implementation strategies.
+        </p>
+
+        <!-- Purchase Buttons -->
+        <div class="book-purchase-buttons">
+          <a href="https://www.emerald.com/insight/publication/doi/10.1108/S1479-3687202037" target="_blank" rel="noopener noreferrer" class="btn btn-purchase btn-purchase-primary">Publisher Website</a>
+          <a href="https://www.amazon.com/dp/1648020224?tag=multiliteracy-20" target="_blank" rel="noopener noreferrer" class="btn btn-purchase btn-purchase-secondary">Buy on Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research Behind This Book Section -->
+    <div class="research-section">
+      <h2 class="research-title">The Research Behind This Book</h2>
+      <p class="research-description">
+        This edited volume brings together original case study research from practitioners and scholars actively engaged in Seal of Biliteracy policy implementation. The chapters document diverse implementation approaches, assess their effectiveness, and identify critical considerations for policy leaders. This work represents rigorous analysis of real-world policy enactment across multiple states and educational contexts.
+      </p>
+      <div class="research-links">
+        <div class="research-link-card">
+          <a href="research.html">Explore Related Research Articles</a>
+        </div>
+        <div class="research-link-card">
+          <a href="state-resources.html">View State Implementation Resources</a>
+        </div>
+        <div class="research-link-card">
+          <a href="research.html">Access Policy Analysis Papers</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-copyright">
+        <p>&copy; 2026 multiliteracy.org. A resource by Dr. Kristin J. Davin.<br><small style="opacity:0.6;">As an Amazon Associate, I earn from qualifying purchases.</small></p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">The Books</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="state-resources.html">State Resources</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Navigation Toggle Script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
