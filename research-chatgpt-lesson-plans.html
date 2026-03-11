@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research findings on how ChatGPT generates foreign language lesson plans — examining prompt specificity, output variability, and historical biases in AI-generated instructional content.">
+    <meta name="keywords" content="ChatGPT, lesson planning, AI in education, foreign language teaching, prompt engineering, AI bias, generative AI, language education">
+    <meta name="author" content="Dr. Kristin J. Davin">
+    <meta property="og:title" content="ChatGPT in Foreign Language Lesson Plan Creation | Research">
+    <meta property="og:description" content="How does ChatGPT perform when creating foreign language lesson plans? Research findings on prompt specificity, variability, and historical biases.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://multiliteracy.org/research-chatgpt-lesson-plans.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ChatGPT in Foreign Language Lesson Plan Creation | Research">
+    <meta name="twitter:description" content="Research findings on prompt specificity, output variability, and historical biases in AI-generated lesson plans.">
+    <link rel="canonical" href="https://multiliteracy.org/research-chatgpt-lesson-plans.html">
+
+    <title>ChatGPT in Lesson Plan Creation: Trends, Variability & Biases | Multiliteracy</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "ChatGPT in Foreign Language Lesson Plan Creation: Trends, Variability, and Historical Biases",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Alex Dornburg",
+          "affiliation": { "@type": "Organization", "name": "University of North Carolina at Charlotte" }
+        },
+        {
+          "@type": "Person",
+          "name": "Kristin J. Davin",
+          "affiliation": { "@type": "Organization", "name": "University of North Carolina at Charlotte" }
+        }
+      ],
+      "datePublished": "2025",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cambridge University Press"
+      },
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "ReCALL"
+      },
+      "url": "https://multiliteracy.org/research-chatgpt-lesson-plans.html",
+      "sameAs": "https://doi.org/10.1017/S0958344024000272"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Article page styles */
+        .article-hero {
+            background: linear-gradient(135deg, #1a2744 0%, #2d4a6b 100%);
+            color: #fff;
+            padding: 4rem 1.5rem 3rem;
+            text-align: center;
+        }
+        .article-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.3;
+        }
+        .article-hero .subtitle {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.7;
+        }
+        .article-meta-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.7);
+        }
+        .article-meta-bar span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Content sections */
+        .article-content-wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        .content-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #1a2744;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c49a3c;
+        }
+        .content-section p {
+            color: #5a5a5a;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Key findings cards */
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .finding-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid #c49a3c;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .finding-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+        .finding-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #c49a3c;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .finding-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            color: #1a2744;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .finding-card p {
+            font-size: 0.88rem;
+            color: #5a5a5a;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Chart containers */
+        .chart-wrapper {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        .chart-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: #1a2744;
+            margin-bottom: 0.5rem;
+        }
+        .chart-subtitle {
+            font-size: 0.85rem;
+            color: #5a5a5a;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Score bar chart */
+        .score-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .score-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 50px;
+            align-items: center;
+            gap: 1rem;
+        }
+        .score-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1a2744;
+            text-align: right;
+        }
+        .score-bar-track {
+            background: #f0f0f0;
+            border-radius: 6px;
+            height: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+        .score-bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 1.2s ease-out;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0.75rem;
+        }
+        .score-bar-fill span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .score-value {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1a2744;
+        }
+        .score-target {
+            position: absolute;
+            right: 0;
+            top: -8px;
+            bottom: -8px;
+            width: 2px;
+            background: #c49a3c;
+            z-index: 2;
+        }
+        .score-target-label {
+            position: absolute;
+            right: -4px;
+            top: -22px;
+            font-size: 0.7rem;
+            color: #c49a3c;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* Variability chart */
+        .variability-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            padding-top: 0.5rem;
+        }
+        .var-row {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            align-items: center;
+            gap: 1rem;
+        }
+        .var-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1a2744;
+            text-align: right;
+        }
+        .var-track {
+            position: relative;
+            height: 40px;
+        }
+        .var-range {
+            position: absolute;
+            height: 8px;
+            top: 16px;
+            border-radius: 4px;
+            opacity: 0.3;
+        }
+        .var-iqr {
+            position: absolute;
+            height: 20px;
+            top: 10px;
+            border-radius: 4px;
+            opacity: 0.7;
+        }
+        .var-mean {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            top: 13px;
+            border: 2px solid #fff;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+        .var-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            top: 16px;
+            opacity: 0.5;
+            z-index: 1;
+        }
+        .var-scale {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        .var-scale-track {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        /* Component heatmap */
+        .heatmap-grid {
+            display: grid;
+            grid-template-columns: 1fr repeat(5, 60px);
+            gap: 2px;
+            font-size: 0.78rem;
+            margin-top: 1rem;
+        }
+        .heatmap-header {
+            font-weight: 700;
+            color: #1a2744;
+            text-align: center;
+            padding: 0.5rem 0.25rem;
+            background: #f7f7f7;
+            border-radius: 4px;
+        }
+        .heatmap-label {
+            padding: 0.5rem 0.75rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+            line-height: 1.3;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+        .heatmap-cell {
+            text-align: center;
+            padding: 0.5rem 0.25rem;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            transition: transform 0.15s;
+        }
+        .heatmap-cell:hover {
+            transform: scale(1.1);
+            z-index: 1;
+        }
+        .heat-high { background: #1a6b5a; }
+        .heat-medium-high { background: #4a9e80; }
+        .heat-medium { background: #8cc5b0; }
+        .heat-low { background: #c49a3c; }
+        .heat-very-low { background: #d4543b; }
+
+        /* Prompt progression */
+        .prompt-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        .prompt-timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background: linear-gradient(to bottom, #c49a3c, #1a6b5a);
+        }
+        .prompt-step {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            gap: 1rem;
+            align-items: start;
+            padding: 0.75rem 0;
+            position: relative;
+        }
+        .prompt-marker {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #fff;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+        .prompt-detail {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+            border-left: 3px solid;
+        }
+        .prompt-detail h4 {
+            font-size: 0.9rem;
+            color: #1a2744;
+            margin-bottom: 0.3rem;
+        }
+        .prompt-detail p {
+            font-size: 0.85rem;
+            color: #5a5a5a;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Implications section */
+        .implications-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .implication-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid;
+        }
+        .implication-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: #1a2744;
+            margin-bottom: 0.5rem;
+        }
+        .implication-card p {
+            font-size: 0.88rem;
+            color: #5a5a5a;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .implication-do { border-left-color: #1a6b5a; }
+        .implication-caution { border-left-color: #c49a3c; }
+
+        /* Callout box */
+        .callout-box {
+            background: #f8f7f3;
+            border-left: 4px solid #c49a3c;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .callout-box p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* Source link */
+        .source-section {
+            background: #f7f7f7;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .source-section p {
+            font-size: 0.9rem;
+            color: #5a5a5a;
+            margin-bottom: 1rem;
+        }
+        .source-section .citation {
+            font-size: 0.88rem;
+            color: #333;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Heatmap legend */
+        .heatmap-legend {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .heatmap-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.75rem;
+            color: #5a5a5a;
+        }
+        .heatmap-legend-color {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-hero h1 { font-size: 1.8rem; }
+            .findings-grid { grid-template-columns: 1fr; }
+            .implications-grid { grid-template-columns: 1fr; }
+            .heatmap-grid { font-size: 0.68rem; grid-template-columns: 1fr repeat(5, 45px); }
+            .heatmap-label { font-size: 0.7rem; padding: 0.4rem; }
+            .article-meta-bar { gap: 1rem; }
+            .score-row { grid-template-columns: 60px 1fr 40px; }
+            .var-row { grid-template-columns: 60px 1fr; }
+            .var-scale { grid-template-columns: 60px 1fr; }
+        }
+        @media (max-width: 480px) {
+            .heatmap-grid { grid-template-columns: 1fr repeat(5, 38px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <span class="logo-mark">M|L</span>
+                    <span class="logo-text">MULTILITERACY</span>
+                </a>
+            </div>
+            <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">The Books</a></li>
+                <li class="nav-dropdown"><a href="research.html" class="active">Research</a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="research.html">All Research</a></li>
+                        <li><a href="research-chatgpt-lesson-plans.html">ChatGPT &amp; Lesson Plans</a></li>
+                        <li><a href="research-project-torch.html">Project TORCH: Cherokee</a></li>
+                    </ul>
+                </li>
+                <li><a href="state-resources.html">State Resources</a></li>
+                <li><a href="about.html">About Dr. Davin</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="article-hero">
+        <div class="container">
+            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.6); margin-bottom: 1rem;">Research Spotlight</p>
+            <h1>ChatGPT in Foreign Language Lesson Plan Creation</h1>
+            <p class="subtitle">How well does AI generate lesson plans for language teachers? A study of prompt specificity, output variability, and the historical biases embedded in AI-generated instructional content.</p>
+            <div class="article-meta-bar">
+                <span>Alex Dornburg & Kristin J. Davin</span>
+                <span>ReCALL, 2025</span>
+                <span>University of North Carolina at Charlotte</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="article-content-wrapper">
+
+        <!-- Back link -->
+        <a href="research.html" class="back-link" style="margin-bottom: 1.5rem; display: inline-block;">&larr; Back to All Research</a>
+
+        <!-- The Big Picture -->
+        <section class="content-section">
+            <h2>The Big Picture</h2>
+            <p>As ChatGPT becomes increasingly accessible, teachers are exploring its potential for creating lesson plans. But how reliable is this AI-generated content for foreign language instruction? This study put ChatGPT 4.0 to the test, generating 50 lesson plans across five increasingly specific prompts to measure quality, consistency, and potential pitfalls.</p>
+            <p>The results reveal a nuanced picture: while ChatGPT can produce generally aligned lesson plans, simply adding more detail to a prompt doesn't guarantee better output. More concerning, the AI's training on historical texts introduced outdated teaching methods into modern lesson plans — methods that research abandoned decades ago.</p>
+        </section>
+
+        <!-- Three Key Findings -->
+        <section class="content-section">
+            <h2>Three Key Findings</h2>
+            <div class="findings-grid">
+                <div class="finding-card">
+                    <div class="finding-number">01</div>
+                    <h3>More Detail ≠ Better Output</h3>
+                    <p>Adding context and specificity to prompts did not produce a linear increase in lesson plan quality. Including a lesson plan template actually decreased scores in some areas, while adding a scoring rubric checklist yielded the highest results.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-number">02</div>
+                    <h3>High Variability Is Inherent</h3>
+                    <p>The same prompt produced dramatically different outputs. Scores from identical prompts varied by as many as 5 or more points out of 25, meaning some outputs missed over 25% of criteria while others exceeded 90% — purely by chance.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-number">03</div>
+                    <h3>Historical Biases Surface</h3>
+                    <p>ChatGPT repeatedly generated lesson plans reflecting the audio-lingual method — a behaviorist approach from the 1970s involving scripted dialogues and rote repetition — practices that modern research has long moved beyond.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Study Design -->
+        <section class="content-section">
+            <h2>How the Study Worked</h2>
+            <p>The researchers designed five prompts that progressively added layers of specificity, each building on the previous one. Each prompt was entered into ChatGPT 10 times in separate chats, yielding 50 lesson plans total. Every output was scored against a 25-point rubric aligned with the edTPA — the performance-based assessment required for teacher licensure in many U.S. states.</p>
+
+            <div class="prompt-timeline">
+                <div class="prompt-step">
+                    <div class="prompt-marker" style="background: #2d4a6b;">P1</div>
+                    <div class="prompt-detail" style="border-left-color: #2d4a6b;">
+                        <h4>Basic Prompt</h4>
+                        <p>A general lesson plan request specifying grade level, language, proficiency level, class size, and three lesson objectives about Costa Rican restaurants.</p>
+                    </div>
+                </div>
+                <div class="prompt-step">
+                    <div class="prompt-marker" style="background: #3a6b8a;">P2</div>
+                    <div class="prompt-detail" style="border-left-color: #3a6b8a;">
+                        <h4>+ Proficiency Guidelines</h4>
+                        <p>Added a directive to define the novice level of proficiency based on the ACTFL Proficiency Guidelines.</p>
+                    </div>
+                </div>
+                <div class="prompt-step">
+                    <div class="prompt-marker" style="background: #4a9e80;">P3</div>
+                    <div class="prompt-detail" style="border-left-color: #4a9e80;">
+                        <h4>+ Lesson Plan Template</h4>
+                        <p>Added a specific lesson plan format (the template used in pre-service teacher training) for ChatGPT to follow.</p>
+                    </div>
+                </div>
+                <div class="prompt-step">
+                    <div class="prompt-marker" style="background: #1a6b5a;">P4</div>
+                    <div class="prompt-detail" style="border-left-color: #1a6b5a;">
+                        <h4>+ World-Readiness Standards</h4>
+                        <p>Added the condition that the lesson plan should address ACTFL World-Readiness Standards for language learning.</p>
+                    </div>
+                </div>
+                <div class="prompt-step">
+                    <div class="prompt-marker" style="background: #0d3d30;">P5</div>
+                    <div class="prompt-detail" style="border-left-color: #0d3d30;">
+                        <h4>+ Scoring Rubric Checklist</h4>
+                        <p>Added a detailed checklist of all 25 components the lesson plan should include — the most specific prompt in the study.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Average Scores Chart -->
+        <section class="content-section">
+            <h2>Quality Scores by Prompt</h2>
+            <p>Each lesson plan was scored on 25 criteria. The relationship between prompt specificity and quality was not linear — the template in P.3 actually reduced scores, while the rubric checklist in P.5 produced the highest average.</p>
+
+            <div class="chart-wrapper">
+                <div class="chart-title">Average Score by Prompt Level</div>
+                <div class="chart-subtitle">Out of 25 possible points. The gold line marks the target score.</div>
+                <div class="score-chart" id="score-chart">
+                    <div class="score-row">
+                        <div class="score-label">P.1 Basic</div>
+                        <div class="score-bar-track">
+                            <div class="score-bar-fill" style="width: 0%; background: linear-gradient(90deg, #2d4a6b, #3a6b8a);" data-target="80.4">
+                                <span>20.1</span>
+                            </div>
+                            <div class="score-target" style="left: 100%;"><span class="score-target-label">25 (Target)</span></div>
+                        </div>
+                        <div class="score-value">20.1</div>
+                    </div>
+                    <div class="score-row">
+                        <div class="score-label">P.2 + Prof.</div>
+                        <div class="score-bar-track">
+                            <div class="score-bar-fill" style="width: 0%; background: linear-gradient(90deg, #3a6b8a, #4a9e80);" data-target="84.8">
+                                <span>21.2</span>
+                            </div>
+                        </div>
+                        <div class="score-value">21.2</div>
+                    </div>
+                    <div class="score-row">
+                        <div class="score-label">P.3 + Tmpl.</div>
+                        <div class="score-bar-track">
+                            <div class="score-bar-fill" style="width: 0%; background: linear-gradient(90deg, #4a9e80, #3a9e70);" data-target="79.2">
+                                <span>19.8</span>
+                            </div>
+                        </div>
+                        <div class="score-value">19.8</div>
+                    </div>
+                    <div class="score-row">
+                        <div class="score-label">P.4 + Stds.</div>
+                        <div class="score-bar-track">
+                            <div class="score-bar-fill" style="width: 0%; background: linear-gradient(90deg, #1a6b5a, #2a7b6a);" data-target="78.4">
+                                <span>19.6</span>
+                            </div>
+                        </div>
+                        <div class="score-value">19.6</div>
+                    </div>
+                    <div class="score-row">
+                        <div class="score-label">P.5 + Rubric</div>
+                        <div class="score-bar-track">
+                            <div class="score-bar-fill" style="width: 0%; background: linear-gradient(90deg, #0d3d30, #1a6b5a);" data-target="86.4">
+                                <span>21.6</span>
+                            </div>
+                        </div>
+                        <div class="score-value">21.6</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-box">
+                <p><strong>Key Insight:</strong> When the lesson plan template was introduced in P.3, scores for the warm-up and teacher input portions dropped sharply. The template's "hook" terminology was interpreted by ChatGPT as a teacher-centered activity, producing outputs that lacked student interaction — despite the template explicitly instructing otherwise.</p>
+            </div>
+        </section>
+
+        <!-- Variability Chart -->
+        <section class="content-section">
+            <h2>The Variability Problem</h2>
+            <p>One of the most striking findings was the wide range of scores produced from identical prompts. This variability underscores that AI outputs are inherently non-deterministic — even when using the same prompt, teachers may get dramatically different quality levels from one attempt to the next.</p>
+
+            <div class="chart-wrapper">
+                <div class="chart-title">Score Range by Prompt</div>
+                <div class="chart-subtitle">Each dot represents one of the 10 outputs. The large dot is the mean score. Bars show the full range.</div>
+                <div class="variability-chart" id="var-chart">
+                    <!-- P.1 -->
+                    <div class="var-row">
+                        <div class="var-label">P.1</div>
+                        <div class="var-track" data-min="16" data-max="23" data-mean="20.1" data-color="#2d4a6b" data-dots="16,18,18,19,20,20,21,21,23,23">
+                        </div>
+                    </div>
+                    <!-- P.2 -->
+                    <div class="var-row">
+                        <div class="var-label">P.2</div>
+                        <div class="var-track" data-min="18" data-max="23" data-mean="21.2" data-color="#3a6b8a" data-dots="18,19,20,21,21,22,22,22,23,23">
+                        </div>
+                    </div>
+                    <!-- P.3 -->
+                    <div class="var-row">
+                        <div class="var-label">P.3</div>
+                        <div class="var-track" data-min="17" data-max="23" data-mean="19.8" data-color="#4a9e80" data-dots="17,18,19,19,20,20,20,21,21,23">
+                        </div>
+                    </div>
+                    <!-- P.4 -->
+                    <div class="var-row">
+                        <div class="var-label">P.4</div>
+                        <div class="var-track" data-min="17" data-max="22" data-mean="19.6" data-color="#1a6b5a" data-dots="17,18,19,19,20,20,20,20,21,22">
+                        </div>
+                    </div>
+                    <!-- P.5 -->
+                    <div class="var-row">
+                        <div class="var-label">P.5</div>
+                        <div class="var-track" data-min="20" data-max="25" data-mean="21.6" data-color="#0d3d30" data-dots="20,20,20,20,21,22,22,22,23,25">
+                        </div>
+                    </div>
+                    <div class="var-scale">
+                        <div></div>
+                        <div class="var-scale-track">
+                            <span>15</span>
+                            <span>17</span>
+                            <span>19</span>
+                            <span>21</span>
+                            <span>23</span>
+                            <span>25</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component Analysis Heatmap -->
+        <section class="content-section">
+            <h2>Where ChatGPT Excels — and Falls Short</h2>
+            <p>Not all lesson plan components were treated equally. Some elements appeared in nearly every output regardless of prompt, while others were almost entirely absent without explicit instruction. This heatmap shows how frequently key rubric categories were met across each prompt group.</p>
+
+            <div class="chart-wrapper">
+                <div class="chart-title">Component Presence by Prompt Level</div>
+                <div class="chart-subtitle">Frequency out of 10 outputs meeting each criterion. Darker green = more consistent.</div>
+                <div class="heatmap-grid">
+                    <!-- Header row -->
+                    <div class="heatmap-header" style="text-align: left; padding-left: 0.75rem;">Component</div>
+                    <div class="heatmap-header">P.1</div>
+                    <div class="heatmap-header">P.2</div>
+                    <div class="heatmap-header">P.3</div>
+                    <div class="heatmap-header">P.4</div>
+                    <div class="heatmap-header">P.5</div>
+
+                    <!-- Consistently Strong -->
+                    <div class="heatmap-label">Meaningful context</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+
+                    <div class="heatmap-label">Lesson objectives</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+
+                    <div class="heatmap-label">Age-appropriate activities</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+
+                    <div class="heatmap-label">Teacher input aligns w/ objectives</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+                    <div class="heatmap-cell heat-high">10</div>
+
+                    <!-- Variable Performance -->
+                    <div class="heatmap-label">Student engagement/interaction</div>
+                    <div class="heatmap-cell heat-medium-high">8</div>
+                    <div class="heatmap-cell heat-medium-high">8</div>
+                    <div class="heatmap-cell heat-medium">5</div>
+                    <div class="heatmap-cell heat-medium">5</div>
+                    <div class="heatmap-cell heat-medium-high">8</div>
+
+                    <div class="heatmap-label">Warm-up activates prior knowledge</div>
+                    <div class="heatmap-cell heat-medium-high">8</div>
+                    <div class="heatmap-cell heat-medium-high">7</div>
+                    <div class="heatmap-cell heat-low">3</div>
+                    <div class="heatmap-cell heat-low">3</div>
+                    <div class="heatmap-cell heat-medium">5</div>
+
+                    <div class="heatmap-label">Closure checks objectives</div>
+                    <div class="heatmap-cell heat-medium-high">7</div>
+                    <div class="heatmap-cell heat-medium-high">7</div>
+                    <div class="heatmap-cell heat-medium">6</div>
+                    <div class="heatmap-cell heat-medium">6</div>
+                    <div class="heatmap-cell heat-medium-high">8</div>
+
+                    <!-- Weak Areas -->
+                    <div class="heatmap-label">Cultural connections</div>
+                    <div class="heatmap-cell heat-very-low">1</div>
+                    <div class="heatmap-cell heat-very-low">1</div>
+                    <div class="heatmap-cell heat-very-low">2</div>
+                    <div class="heatmap-cell heat-very-low">2</div>
+                    <div class="heatmap-cell heat-medium">5</div>
+
+                    <div class="heatmap-label">ACTFL standards integrated</div>
+                    <div class="heatmap-cell heat-very-low">1</div>
+                    <div class="heatmap-cell heat-very-low">2</div>
+                    <div class="heatmap-cell heat-very-low">1</div>
+                    <div class="heatmap-cell heat-low">3</div>
+                    <div class="heatmap-cell heat-medium">5</div>
+
+                    <div class="heatmap-label">Interpersonal communication</div>
+                    <div class="heatmap-cell heat-medium">6</div>
+                    <div class="heatmap-cell heat-medium">5</div>
+                    <div class="heatmap-cell heat-low">4</div>
+                    <div class="heatmap-cell heat-low">4</div>
+                    <div class="heatmap-cell heat-medium">6</div>
+                </div>
+                <div class="heatmap-legend">
+                    <div class="heatmap-legend-item"><div class="heatmap-legend-color" style="background: #1a6b5a;"></div> 9–10 (strong)</div>
+                    <div class="heatmap-legend-item"><div class="heatmap-legend-color" style="background: #4a9e80;"></div> 7–8</div>
+                    <div class="heatmap-legend-item"><div class="heatmap-legend-color" style="background: #8cc5b0;"></div> 5–6</div>
+                    <div class="heatmap-legend-item"><div class="heatmap-legend-color" style="background: #c49a3c;"></div> 3–4</div>
+                    <div class="heatmap-legend-item"><div class="heatmap-legend-color" style="background: #d4543b;"></div> 1–2 (weak)</div>
+                </div>
+            </div>
+
+            <div class="callout-box">
+                <p><strong>The culture gap:</strong> Cultural connections — helping students relate their own perspectives to those of the target culture — appeared in only 5 of the 50 lesson plans for the first four prompts. Even when the rubric was provided in P.5, this component appeared only 50% of the time. This mirrors a longstanding challenge in language education where culture is treated as secondary to linguistic skills.</p>
+            </div>
+        </section>
+
+        <!-- Historical Bias Section -->
+        <section class="content-section">
+            <h2>The Historical Bias Problem</h2>
+            <p>Perhaps the most significant finding was that ChatGPT's outputs frequently reflected outdated pedagogical methods. Because the model was trained on vast collections of text spanning decades, it absorbed associations with teaching practices that are no longer considered best practice.</p>
+
+            <div class="implications-grid">
+                <div class="implication-card" style="border-left-color: #d4543b;">
+                    <h3>What ChatGPT Produced</h3>
+                    <p>Lesson plans featuring scripted dialogues, rote repetition, and flashcard-based pronunciation drills — hallmarks of the audio-lingual method popular in the 1970s. In some iterations, students were directed to rehearse and repeat pre-scripted role-play scripts.</p>
+                </div>
+                <div class="implication-card" style="border-left-color: #1a6b5a;">
+                    <h3>What Research Recommends</h3>
+                    <p>Modern communicative approaches emphasize authentic interaction, meaningful context, and student-generated language. The focus has shifted from memorization to real communication in culturally grounded situations.</p>
+                </div>
+            </div>
+
+            <p>This finding has broad implications beyond language education. Any field where practice has evolved significantly over time — medicine, science education, counseling — may encounter similar biases when using AI trained on historical texts to generate current instructional content.</p>
+        </section>
+
+        <!-- Practical Implications -->
+        <section class="content-section">
+            <h2>What This Means for Teachers</h2>
+            <div class="implications-grid">
+                <div class="implication-card implication-do">
+                    <h3>Include Scoring Criteria</h3>
+                    <p>Adding a detailed checklist of what the lesson plan should contain (P.5) yielded the highest and most consistent scores. Tell the AI exactly what components to include.</p>
+                </div>
+                <div class="implication-card implication-do">
+                    <h3>Always Review for Bias</h3>
+                    <p>AI literacy is essential. Critically evaluate generated content for outdated methods, especially scripted dialogues, rote memorization, and activities lacking cultural connection.</p>
+                </div>
+                <div class="implication-card implication-caution">
+                    <h3>Don't Assume More = Better</h3>
+                    <p>Simply adding a lesson plan template reduced quality in some areas. Specialized terminology in templates may be misinterpreted by the AI if not fully explained.</p>
+                </div>
+                <div class="implication-card implication-caution">
+                    <h3>Generate Multiple Outputs</h3>
+                    <p>Given the inherent variability, one output is never sufficient. Generate several versions and select the best elements from each, then refine through follow-up prompting.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Source -->
+        <section class="source-section">
+            <p class="citation">Dornburg, A. & Davin, K. J. (2025). ChatGPT in foreign language lesson plan creation: Trends, variability, and historical biases. <em>ReCALL</em>, 37(3), 332–347.</p>
+            <a href="https://www.cambridge.org/core/journals/recall/article/chatgpt-in-foreign-language-lesson-plan-creation-trends-variability-and-historical-biases/0AEBE95C6587E6ACB0D401B6FC6F5385" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Read the Full Article &rarr;</a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2026 multiliteracy.org. A resource by Dr. Kristin J. Davin.<br><small style="opacity:0.6;">As an Amazon Associate, I earn from qualifying purchases.</small></p>
+                </div>
+                <div class="footer-right">
+                    <nav class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="books.html">The Books</a>
+                        <a href="research.html">Research</a>
+                        <a href="state-resources.html">State Resources</a>
+                        <a href="about.html">About Dr. Davin</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger-menu');
+        const navMenu = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Animate score bars on scroll
+        function animateScoreBars() {
+            var bars = document.querySelectorAll('.score-bar-fill');
+            bars.forEach(function(bar) {
+                var target = bar.getAttribute('data-target');
+                if (target) {
+                    bar.style.width = target + '%';
+                }
+            });
+        }
+
+        // Build variability chart
+        function buildVariabilityChart() {
+            var tracks = document.querySelectorAll('.var-track');
+            var scaleMin = 15;
+            var scaleMax = 25;
+            var range = scaleMax - scaleMin;
+
+            tracks.forEach(function(track) {
+                var min = parseFloat(track.getAttribute('data-min'));
+                var max = parseFloat(track.getAttribute('data-max'));
+                var mean = parseFloat(track.getAttribute('data-mean'));
+                var color = track.getAttribute('data-color');
+                var dotsStr = track.getAttribute('data-dots');
+                var dots = dotsStr.split(',').map(Number);
+
+                // Range bar
+                var rangeBar = document.createElement('div');
+                rangeBar.className = 'var-range';
+                rangeBar.style.left = ((min - scaleMin) / range * 100) + '%';
+                rangeBar.style.width = ((max - min) / range * 100) + '%';
+                rangeBar.style.background = color;
+                track.appendChild(rangeBar);
+
+                // Individual dots
+                dots.forEach(function(val) {
+                    var dot = document.createElement('div');
+                    dot.className = 'var-dot';
+                    dot.style.left = 'calc(' + ((val - scaleMin) / range * 100) + '% - 4px)';
+                    dot.style.background = color;
+                    track.appendChild(dot);
+                });
+
+                // Mean dot
+                var meanDot = document.createElement('div');
+                meanDot.className = 'var-mean';
+                meanDot.style.left = 'calc(' + ((mean - scaleMin) / range * 100) + '% - 7px)';
+                meanDot.style.background = color;
+                track.appendChild(meanDot);
+            });
+        }
+
+        // Intersection Observer for animation
+        var scoreObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    animateScoreBars();
+                    scoreObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        var scoreChart = document.getElementById('score-chart');
+        if (scoreChart) scoreObserver.observe(scoreChart);
+
+        // Build charts on load
+        document.addEventListener('DOMContentLoaded', function() {
+            buildVariabilityChart();
+        });
+    </script>
+</body>
+</html>
